@@ -4,6 +4,8 @@ import jwt from 'jsonwebtoken';
 interface UserPayload {
   id: string;
   email: string;
+  exp: number; // Expiration time in seconds
+  roleId?: string; // Optional role ID
 }
 
 declare global {
@@ -30,6 +32,10 @@ export const currentUser = (
       process.env.JWT_KEY!
     ) as UserPayload;
     console.log("currentUser middleware", payload)
+    const currentTime = Math.floor(Date.now() / 1000);
+    if (payload.exp < currentTime) {
+      return res.status(401).json({ error: 'Token has expired' });
+    }
     req.currentUser = payload;
   } catch (err) {}
 
