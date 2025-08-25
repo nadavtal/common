@@ -23,8 +23,5 @@ export abstract class Publisher<T extends Event> {
             resolve();
         });
     });
-    // this.client.publish(this.subject, JSON.stringify(data), () => {
-    //   console.log('Event published');
-    // });
   }
 }

@@ -1,8 +1,9 @@
 export enum Subjects {
-    TicketCreated = 'ticket:created',
-    TicketUpdated = 'ticket:updated',
-    OrderCreated = 'order:created',
-    OrderCancelled = 'order:cancelled',
-    ExpirationComplete = 'expiration:complete',
-    PaymentCreated = 'payment:created',
+    UploadComplete = 'upload:complete',
+    UploadFailed = 'upload:failed',
+    UploadAborted = 'upload:aborted',
+    UploadWaitingForNextChunk = 'upload:waiting-for-next-chunk',
+    UploadUnzipping = 'upload:unzipping',
+    UploadUploadingToCloud = 'upload:uploading-to-cloud',
+    UploadUploadingToServer = 'upload:uploading-to-server',
     }
