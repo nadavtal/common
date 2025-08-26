@@ -19,3 +19,7 @@ export * from './events/types/order-status';
 export * from './events/types/upload-status';
 
 export * from './utils/redisClient';
+
+export * from './utils/files';
+export * from './utils/types';
+export * from './utils/customizedTransform';
