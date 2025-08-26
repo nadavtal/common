@@ -23,3 +23,5 @@ export * from './utils/redisClient';
 export * from './utils/files';
 export * from './utils/types';
 export * from './utils/customizedTransform';
+
+// export { default as allJson } from './data/all.json';

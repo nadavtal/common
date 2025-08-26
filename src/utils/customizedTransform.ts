@@ -1,6 +1,6 @@
 'use strict'
-
-const epsg = require('../data/all.json')
+import  allJson from '../data/all.json';
+const epsg = allJson
 const proj4 = require('proj4')
 
 const leadingEPSG = /^epsg:/i
