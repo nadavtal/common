@@ -1,6 +1,6 @@
 'use strict'
 import  allJson from '../data/all.json';
-
+console.log('allJson', allJson);
 type EPSGType = {
   [key: string]: {
 	proj4: string;
@@ -8,7 +8,7 @@ type EPSGType = {
   };
 };
 
-const epsg = allJson as EPSGType
+const epsg =  allJson as EPSGType
 const proj4 = require('proj4')
 
 const leadingEPSG = /^epsg:/i
