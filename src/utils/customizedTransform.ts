@@ -1,10 +1,17 @@
 'use strict'
 import  allJson from '../data/all.json';
 console.log('allJson', allJson);
-type EPSGType = {
+export type EPSGType = {
   [key: string]: {
-	proj4: string;
-	// add other properties if needed
+    code: string;
+    kind: string;
+    name: string;
+    wkt: string | null;
+    proj4: string | null; // <-- allow null
+    bbox: number[];
+    unit: string;
+    area: string;
+    accuracy: number;
   };
 };
 
