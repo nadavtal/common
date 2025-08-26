@@ -1,11 +1,19 @@
 'use strict'
 import  allJson from '../data/all.json';
-const epsg = allJson
+
+type EPSGType = {
+  [key: string]: {
+	proj4: string;
+	// add other properties if needed
+  };
+};
+
+const epsg = allJson as EPSGType
 const proj4 = require('proj4')
 
 const leadingEPSG = /^epsg:/i
 
-const customizedTransform = (from: any, to: any) => {
+const customizedTransform = (from: string, to: string) => {
 	if ('string' !== typeof from) throw new Error('from must be a string')
 	from = from.replace(leadingEPSG, '')
 	const fromEPSG = epsg[from]
