@@ -7,11 +7,11 @@ export type EPSGType = {
     kind: string;
     name: string;
     wkt: string | null;
-    proj4: string | null; // <-- allow null
+    proj4: string | null;
     bbox: number[];
     unit: string;
     area: string;
-    accuracy: number;
+    accuracy: number | null; // <-- allow null
   };
 };
 
