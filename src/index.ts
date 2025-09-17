@@ -1,4 +1,14 @@
-//Resxport stuff from errors and middlewares
+// Re-export shared libraries and their types
+export { default as express } from 'express';
+export type { Request, Response, NextFunction, Application, Router } from 'express';
+export * from 'express-validator';
+export { default as jwt } from 'jsonwebtoken';
+export type { JwtPayload, SignOptions, VerifyOptions } from 'jsonwebtoken';
+export { default as session } from 'cookie-session';
+export { default as Redis } from 'ioredis';
+export type { RedisOptions } from 'ioredis';
+
+// Export stuff from errors and middlewares
 export * from './errors/bad-request-error';
 export * from './errors/custom-error';
 export * from './errors/database-connection-error';
@@ -23,5 +33,8 @@ export * from './utils/redisClient';
 export * from './utils/files';
 export * from './utils/types';
 export * from './utils/customizedTransform';
+
+
+
 
 // export { default as allJson } from './data/all.json';
