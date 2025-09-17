@@ -5,10 +5,10 @@ export * from 'express-validator';
 export { default as jwt } from 'jsonwebtoken';
 export type { JwtPayload, SignOptions, VerifyOptions } from 'jsonwebtoken';
 export { default as session } from 'cookie-session';
-export { default as Redis } from 'ioredis';
-export type { RedisOptions } from 'ioredis';
 
-// Export stuff from errors and middlewares
+
+export { default as redisClient } from './utils/redisClient';
+export type { RedisType } from './utils/redisClient';
 export * from './errors/bad-request-error';
 export * from './errors/custom-error';
 export * from './errors/database-connection-error';
