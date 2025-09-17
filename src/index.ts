@@ -5,9 +5,10 @@ export * from 'express-validator';
 export { default as jwt } from 'jsonwebtoken';
 export type { JwtPayload, SignOptions, VerifyOptions } from 'jsonwebtoken';
 export { default as session } from 'cookie-session';
+export { default as getRedisClient } from './utils/redisClient';
+export { default as getMySQLInstance } from './utils/mySqlDb';
+export { mySqlQuery } from './utils/mySqlQuery';
 
-
-export { default as redisClient } from './utils/redisClient';
 export type { RedisType } from './utils/redisClient';
 export * from './errors/bad-request-error';
 export * from './errors/custom-error';
@@ -27,8 +28,6 @@ export * from './events/subjects';
 
 export * from './events/types/order-status';
 export * from './events/types/upload-status';
-
-export * from './utils/redisClient';
 
 export * from './utils/files';
 export * from './utils/types';

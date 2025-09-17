@@ -29,6 +29,7 @@
     "express-validator": "^7.0.1",
     "ioredis": "^5.7.0",
     "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.15.0",
     "node-nats-streaming": "^0.3.2",
     "transform-coordinates": "^1.0.0"
   }

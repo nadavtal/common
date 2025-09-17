@@ -2,15 +2,24 @@ import Redis from 'ioredis';
 import type { Redis as RedisType } from 'ioredis';
 
 const redisUrl = process.env.REDIS_URL || 'redis://localhost:6379';
-const redisClient: RedisType = new Redis(redisUrl);
+let redisClient: RedisType | null = null;
 
-redisClient.on('connect', () => {
-  console.log('Connected to Redis');
-});
+const getRedisClient = (): RedisType => {
+  if (!redisClient) {
+    console.log('Initializing Redis connection...');
+    redisClient = new Redis(redisUrl);
 
-redisClient.on('error', (err) => {
-  console.error('Redis connection error:', err);
-});
+    redisClient.on('connect', () => {
+      console.log('Connected to Redis');
+    });
 
-export default redisClient;
+    redisClient.on('error', (err) => {
+      console.error('Redis connection error:', err);
+    });
+  }
+  
+  return redisClient;
+};
+
+export default getRedisClient;
 export type { RedisType };
